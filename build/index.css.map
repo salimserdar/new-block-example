@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///index.scss"],"names":[],"mappings":"AAAA;EACE,eAAe,EAAE","file":"index.css","sourcesContent":[".wp-block-new-block-example-posts-per-category {\n  background: red; }\n"],"sourceRoot":""}
