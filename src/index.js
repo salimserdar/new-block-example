@@ -1,65 +1,82 @@
-import { registerBlockType } from '@wordpress/blocks';
-import './index.scss';
+const {
+  i18n: { __ },
+  blocks: { registerBlockType },
+  element: { createElement: e, Fragment },
+  data: { useSelect },
+  components: {
+    TextareaControl,
+    PanelBody,
+    RangeControl,
+    ToggleControl,
+    Button,
+    FocalPointPicker,
+    Notice,
+    TextControl,
+    RadioControl,
+  },
+  blockEditor: { MediaUpload, InnerBlocks, InspectorControls, ColorPalette },
+} = window.wp;
+import "./index.scss";
 
-registerBlockType( 'new-block-example/posts-per-category', {
-	title: 'Post per Category',
-	icon: 'smiley',
-	category: 'common',
-	attributes: {
-		categories: {
-			type: 'object',
-		},
-		selectedCategory: {
-			type: 'string',
-		},
-	},
-	edit: ( props ) => {
-		const { categories, selectedCategory } = props.attributes;
+registerBlockType("new-block-example/posts-per-category", {
+  title: "Post per Category",
+  icon: "smiley",
+  category: "common",
+  attributes: {
+    categories: {
+      type: "object",
+    },
+    selectedCategory: {
+      type: "string",
+    },
+  },
+  edit: (props) => {
+    const { categories, selectedCategory } = props.attributes;
 
-		if ( ! categories ) {
-			wp.apiFetch( {
-				url: '/wp-json/wp/v2/categories',
-			} )
-				.then( ( categories ) => {
-					props.setAttributes( {
-						categories,
-					} );
-				} )
-				.catch( ( err ) => console.log( err ) );
-		}
+    if (!categories) {
+      wp.apiFetch({
+        url: "/wp-json/wp/v2/categories",
+      })
+        .then((categories) => {
+          props.setAttributes({
+            categories,
+          });
+        })
+        .catch((err) => console.log(err));
+    }
 
-		if ( ! categories ) {
-			return 'Loading...';
-		}
+    if (!categories) {
+      return "Loading...";
+    }
 
-		if ( categories && categories.lenght === 0 ) {
-			return 'No categories found!';
-		}
+    if (categories && categories.lenght === 0) {
+      return "No categories found!";
+    }
 
-		if ( categories && categories.lenght === 0 ) {
-			return 'No categories found!';
-        }
-        
-        const updateCategory = (e) => {
-            console.log('Selected');
-            props.setAttributes({
-                selectedCategory: e.target.value,
-            })
-        }
+    if (categories && categories.lenght === 0) {
+      return "No categories found!";
+    }
 
-		return (
-			<div className={ props.className }>
-				<select onChange={updateCategory} value={selectedCategory}>
-					{ categories.map( ( category ) => {
-						return (
-							<option value={ category.id } key={ category.id }>
-								{ category.name }
-							</option>
-						);
-					} ) }
-				</select>
-			</div>
-		);
-	},
-	save: () => null,
-} );
+    const updateCategory = (e) => {
+      console.log("Selected");
+      props.setAttributes({
+        selectedCategory: e.target.value,
+      });
+    };
+
+    return (
+      <div className={props.className}>
+        <select onChange={updateCategory} value={selectedCategory}>
+          {categories.map((category) => {
+            return (
+              <option value={category.id} key={category.id}>
+                {category.name}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+    );
+  },
+  save: () => null,
+});
