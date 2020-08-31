@@ -1,5 +1,16 @@
-.wp-block-new-block-example-posts-per-category {
-  background: red; }
+.components-panel__icon {
+  -webkit-filter: none !important;
+          filter: none !important; }
+
+.wp-block-ainoblocks-card {
+  position: relative; }
+
+.components-panel__icon {
+  -webkit-filter: none !important;
+          filter: none !important; }
+
+.wp-block-ainoblocks-card {
+  position: relative; }
 
 
 /*# sourceMappingURL=index.css.map*/

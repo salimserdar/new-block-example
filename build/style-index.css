@@ -1,0 +1,52 @@
+.wp-block-ainoblocks-card {
+  box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04); }
+  .wp-block-ainoblocks-card [class*='wp-block-'] {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .wp-block-ainoblocks-card p.has-background {
+    padding: 0 !important; }
+  .wp-block-ainoblocks-card.has-border {
+    border-width: 1px;
+    border-style: solid; }
+  .wp-block-ainoblocks-card.shadow-a {
+    box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+    -webkit-box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04); }
+  .wp-block-ainoblocks-card.shadow-b {
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+    -webkit-box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04); }
+  .wp-block-ainoblocks-card.shadow-none {
+    box-shadow: none;
+    -webkit-box-shadow: none; }
+  .wp-block-ainoblocks-card p,
+  .wp-block-ainoblocks-card blockquote {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+.wp-block-ainoblocks-card {
+  box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04); }
+  .wp-block-ainoblocks-card [class*='wp-block-'] {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .wp-block-ainoblocks-card p.has-background {
+    padding: 0 !important; }
+  .wp-block-ainoblocks-card.has-border {
+    border-width: 1px;
+    border-style: solid; }
+  .wp-block-ainoblocks-card.shadow-a {
+    box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+    -webkit-box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04); }
+  .wp-block-ainoblocks-card.shadow-b {
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+    -webkit-box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.15), 0 0 4px 0 rgba(0, 0, 0, 0.04); }
+  .wp-block-ainoblocks-card.shadow-none {
+    box-shadow: none;
+    -webkit-box-shadow: none; }
+  .wp-block-ainoblocks-card p,
+  .wp-block-ainoblocks-card blockquote {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+
+/*# sourceMappingURL=style-index.css.map*/

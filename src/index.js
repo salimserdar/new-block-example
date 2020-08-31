@@ -1,82 +1,35 @@
-const {
-  i18n: { __ },
-  blocks: { registerBlockType },
-  element: { createElement: e, Fragment },
-  data: { useSelect },
-  components: {
-    TextareaControl,
-    PanelBody,
-    RangeControl,
-    ToggleControl,
-    Button,
-    FocalPointPicker,
-    Notice,
-    TextControl,
-    RadioControl,
-  },
-  blockEditor: { MediaUpload, InnerBlocks, InspectorControls, ColorPalette },
-} = window.wp;
-import "./index.scss";
+import "./blocks/team-members-block/parent";
+import "./blocks/post-grid-block";
+import "./blocks/post-grid-block";
 
-registerBlockType("new-block-example/posts-per-category", {
-  title: "Post per Category",
-  icon: "smiley",
-  category: "common",
-  attributes: {
-    categories: {
-      type: "object",
-    },
-    selectedCategory: {
-      type: "string",
-    },
-  },
-  edit: (props) => {
-    const { categories, selectedCategory } = props.attributes;
+/**
+ * WordPress dependencies
+ */
 
-    if (!categories) {
-      wp.apiFetch({
-        url: "/wp-json/wp/v2/categories",
-      })
-        .then((categories) => {
-          props.setAttributes({
-            categories,
-          });
-        })
-        .catch((err) => console.log(err));
+const { registerBlockType } = wp.blocks;
+
+// Category slug and title
+const category = {
+  slug: "new-block-example",
+  title: "New Blocks Example",
+};
+
+import * as card from "./blocks/card";
+import * as postGridBlock from "./blocks/post-grid-block";
+
+export function registerNewExampleBlocks() {
+  [card, postGridBlock].forEach((block) => {
+    if (!block) {
+      return;
     }
 
-    if (!categories) {
-      return "Loading...";
-    }
+    const { name, icon, settings } = block;
 
-    if (categories && categories.lenght === 0) {
-      return "No categories found!";
-    }
-
-    if (categories && categories.lenght === 0) {
-      return "No categories found!";
-    }
-
-    const updateCategory = (e) => {
-      console.log("Selected");
-      props.setAttributes({
-        selectedCategory: e.target.value,
-      });
-    };
-
-    return (
-      <div className={props.className}>
-        <select onChange={updateCategory} value={selectedCategory}>
-          {categories.map((category) => {
-            return (
-              <option value={category.id} key={category.id}>
-                {category.name}
-              </option>
-            );
-          })}
-        </select>
-      </div>
-    );
-  },
-  save: () => null,
-});
+    registerBlockType(`new-block-example/${name}`, {
+      category: category.slug,
+      icon: { src: icon },
+      ...settings,
+    });
+  });
+}
+registerNewExampleBlocks();

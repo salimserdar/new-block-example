@@ -1,0 +1,37 @@
+{
+	"name": "card",
+	"attributes": {
+		"align": {
+			"type": "string"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
+		},
+		"backgroundRadius": {
+			"type": "number",
+			"default": 0
+		},
+		"shadowName": {
+			"type": "string"
+		},
+		"paddingTop": {
+			"type": "number",
+			"default": 3
+		},
+		"paddingBottom": {
+			"type": "number",
+			"default": 3
+		},
+		"paddingLeft": {
+			"type": "number",
+			"default": 3
+		},
+		"paddingRight": {
+			"type": "number",
+			"default": 3
+		}
+	}
+}

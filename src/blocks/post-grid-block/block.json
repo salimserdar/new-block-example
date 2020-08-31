@@ -1,0 +1,14 @@
+{
+	"name": "post-grid-block",
+	"attributes": {
+		"align": {
+			"type": "string"
+		},
+        "categories": {
+            "type": "object"
+          },
+          "selectedCategory": {
+            "type": "string"
+        }
+	}
+}
